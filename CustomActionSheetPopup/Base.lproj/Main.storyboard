@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomActionSheetPopup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="59L-7e-ONB">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKb-6g-Sgd">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                                        <state key="normal" title="Show with limited Values Type 1"/>
+                                        <connections>
+                                            <action selector="showPopupWithLimited1ButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgW-5C-0bx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-Ww-TxS">
+                                        <rect key="frame" x="0.0" y="167" width="375" height="166.5"/>
+                                        <state key="normal" title="Show with unlimited Values Type 1"/>
+                                        <connections>
+                                            <action selector="showPopupWithUnLimited1ButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vK-bs-6rB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K02-O5-EwG">
+                                        <rect key="frame" x="0.0" y="333.5" width="375" height="167"/>
+                                        <state key="normal" title="Show with limited Values Type 2"/>
+                                        <connections>
+                                            <action selector="showPopupWithLimited2ButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vmQ-Hd-wKd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-6J-aVo">
+                                        <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
+                                        <state key="normal" title="Show with unlimited Values Type 2"/>
+                                        <connections>
+                                            <action selector="showPopupWithUnLimited2ButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K0r-wN-G2Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="59L-7e-ONB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="7rq-Qu-zK0"/>
+                            <constraint firstItem="59L-7e-ONB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="bF0-sW-TRe"/>
+                            <constraint firstItem="59L-7e-ONB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fVO-dT-qRZ"/>
+                            <constraint firstItem="59L-7e-ONB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pc4-QQ-Vj3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
