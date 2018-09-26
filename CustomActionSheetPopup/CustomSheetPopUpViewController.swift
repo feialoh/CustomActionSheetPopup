@@ -32,21 +32,24 @@ class CustomSheetPopUpViewController: UIViewController {
 
     var scrollBottomMargin: NSLayoutConstraint!
     
-    var BUTTON_HEIGHT:CGFloat = 50.0
-    
-    var BUTTON_SPACING:CGFloat = 20
-    
-    var FONT_NAME = "HelveticaNeue-Bold"
-    
-    var TITLE_SIZE:CGFloat  = 16.0
-    
-    var ITEM_FONT_SIZE:CGFloat  = 16.0
+
     
     var popUpShowStatus = true
     
     var delegate:CustomPopUpDelegate?
-
-    var titleLabel: UILabel!
+    
+    //Default constants
+    var titleViewHeight:CGFloat = 50.0
+    
+    var buttonHeight:CGFloat = 50.0
+    
+    var buttonSpacing:CGFloat = 20
+    
+    var fontName = "HelveticaNeue-Bold"
+    
+    var titleSize:CGFloat  = 16.0
+    
+    var itemFontSize:CGFloat  = 16.0
     
     /*===============================================================================*/
     // MARK: - View Lifecycle Methods
@@ -102,7 +105,7 @@ class CustomSheetPopUpViewController: UIViewController {
         titleView = UIView()
         titleView.backgroundColor = .clear
         popUpView.addSubview(titleView)
-        addConstraints(titleView, superView: popUpView, bottom:(false,0.0),height:(true,40.0))
+        addConstraints(titleView, superView: popUpView, bottom:(false,0.0),height:(true,titleViewHeight))
         
         //Title Label
         popUpTitleLabel = UILabel()
@@ -147,7 +150,7 @@ class CustomSheetPopUpViewController: UIViewController {
     func addItemsToStack(title:String,_ itemsArray:[String]){
         
         itemsContainerStackView.removeAllArrangedSubviews()
-        itemsContainerStackView.spacing = BUTTON_SPACING
+        itemsContainerStackView.spacing = buttonSpacing
         
         let maxHeight = UIScreen.main.bounds.size.height - Swift.min(UIApplication.shared.statusBarFrame.size.width, UIApplication.shared.statusBarFrame.size.height)
         
@@ -155,7 +158,7 @@ class CustomSheetPopUpViewController: UIViewController {
             
             let itemButton = UIButton()
             itemButton.widthAnchor.constraint(equalToConstant: itemsContainerStackView.frame.width * 0.9).isActive = true
-            itemButton.heightAnchor.constraint(equalToConstant: BUTTON_HEIGHT).isActive = true
+            itemButton.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
             itemButton.tag = index
             itemButton.setTitle(items, for: .normal)
             itemButton.setTitleColor(.black, for: .normal)
@@ -166,16 +169,16 @@ class CustomSheetPopUpViewController: UIViewController {
             
         }
         
-        let buttonHeights:CGFloat = CGFloat(itemsArray.count) * BUTTON_HEIGHT
+        let buttonHeights:CGFloat = CGFloat(itemsArray.count) * buttonHeight
         
-        let buttonSpacing:CGFloat = CGFloat(itemsArray.count-1) * BUTTON_SPACING
+        let spacing:CGFloat = CGFloat(itemsArray.count-1) * buttonSpacing
         
-        let calculatedViewHeight = CGFloat(titleView.frame.height + buttonHeights + buttonSpacing + scrollBottomMargin.constant)
+        let calculatedViewHeight = CGFloat(titleView.frame.height + buttonHeights + spacing + scrollBottomMargin.constant)
         
         popUpViewHeight.constant = (calculatedViewHeight < maxHeight) ? calculatedViewHeight:maxHeight
         
         popUpTitleLabel.text = title
-        popUpTitleLabel.font = myFontName(FONT_NAME, size: ITEM_FONT_SIZE)
+        popUpTitleLabel.font = myFontName(fontName, size: itemFontSize)
         
         popUpView.addShadow(shadowRadius:0, cornerRadius:10.0)
     }
@@ -266,7 +269,7 @@ class CustomSheetPopUpViewController: UIViewController {
         sender.clipsToBounds = true
         sender.layer.cornerRadius = 5
         sender.backgroundColor = color
-        sender.titleLabel?.font = myFontName(FONT_NAME, size: TITLE_SIZE)
+        sender.titleLabel?.font = myFontName(fontName, size: titleSize)
     }
     
     

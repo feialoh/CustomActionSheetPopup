@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         
         var itemsArray = [String]()
         
-        for index in 0...5{
+        for index in 1...5{
             
             itemsArray.append("Item \(index)")
         }
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         
         var itemsArray = [String]()
         
-        for index in 0...20{
+        for index in 1...20{
             
             itemsArray.append("Item \(index)")
         }
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         
         var itemsArray = [String]()
         
-        for index in 0...5{
+        for index in 1...5{
             
             itemsArray.append("Item \(index)")
         }
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         
         var itemsArray = [String]()
         
-        for index in 0...20{
+        for index in 1...20{
             
             itemsArray.append("Item \(index)")
         }
